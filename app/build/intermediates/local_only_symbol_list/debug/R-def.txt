@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color main_color
+color white
+drawable ic_home
+drawable ic_home_active
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable ic_notification_bell
+drawable ic_worker
+drawable ic_worker_active
+id container
+id mobile_navigation
+id nav_host_fragment_activity_main
+id nav_view
+id navigation_home
+id welcomeText
+layout activity_main
+layout fragment_home
+menu bottom_nav_menu
+mipmap ic_launcher
+mipmap ic_launcher_round
+navigation mobile_navigation
+string app_name
+string title_home
+string title_info
+string title_payment
+string title_worker
+style Base.Theme.JikGong
+style Theme.JikGong
+xml backup_rules
+xml data_extraction_rules
