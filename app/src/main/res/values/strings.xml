@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">JikGong</string>
+    <string name="title_home">홈</string>
+    <string name="title_worker">직공</string>
+    <string name="title_payment">임금 지급</string>
+    <string name="title_info">기업 정보</string>
+</resources>
