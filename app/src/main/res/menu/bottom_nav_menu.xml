@@ -4,4 +4,16 @@
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_scout"
+        android:icon="@drawable/ic_home"
+        android:title="인력 스카웃" />
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_home"
+        android:title="지급 내역" />
+    <item
+        android:id="@+id/navigation_info"
+        android:icon="@drawable/ic_home"
+        android:title="기업 정보" />
 </menu>
