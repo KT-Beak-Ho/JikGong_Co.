@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">JikGong</string>
+
+    <!-- Bottom Nav Title -->
     <string name="title_home">홈</string>
     <string name="title_scout">인력 스카웃</string>
     <string name="title_history">지급 내역</string>
     <string name="title_info">기업 정보</string>
+
+
+
+    
 </resources>

@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-
     <!-- Primary -->
-    <color name="Primary">#FF0A0B1A</color>
+    <color name="Primary">#FF17192E</color>
+
     <color name="OnPrimary">#FFFFFFFF</color>
-    <color name="DeActiveOnPrimary">#5CFFFFFF</color>
+    <color name="OnPrimaryDisabled">#5CFFFFFF</color>
 
 
     <!-- Secondary -->
     <color name="Secondary_B_5">#FF2353CF</color>
-    <color name="Secondary_B">#FF3959FF</color>
+    <color name="Secondary_B">#FF3971FF</color>
     <color name="Secondary_B_3">#FF6499FF</color>
     <color name="Secondary_B_2">#FFBCD3FF</color>
     <color name="Secondary_B_1">#FFE9F2FF</color>
@@ -22,9 +20,38 @@
     <color name="Secondary_O_2">#FFFFE2B6</color>
     <color name="Secondary_O_1">#FFFFF1DD</color>
 
+    <color name="OnSecondary">#FFFFFFFF</color>
+
 
     <!-- Text & Icon -->
-    <color name="Active">#DE020411</color>
-    <color name="Intermediate">#99020411</color>
-    <color name="DeActive">#5C020411</color>
+    <color name="High">#DE02030C</color>
+    <color name="Medium">#9902030C</color>
+    <color name="Disabled">#5C02030C</color>
+
+
+    <!-- Background -->
+    <color name="Background">#FFF3F4F8</color>
+
+
+    <!-- State -->
+    <color name="Bad">#FFE83535</color>
+    <color name="Good">#FF19CA80</color>
+
+    <color name="Error">#FFE83535</color>
+    <color name="Success">#FF19CA80</color>
+
+
+    <!-- Gray -->
+    <color name="White">#FFFFFFFF</color>
+    <color name="Gray_50">#FFF1F1F4</color>
+    <color name="Gray_100">#FFDFDFE3</color>
+    <color name="Gray_200">#FFCACBD3</color>
+    <color name="Gray_300">#FFB5B6BF</color>
+    <color name="Gray_400">#FFA7A9B4</color>
+    <color name="Gray_500">#FF868793</color>
+    <color name="Gray_600">#FF676876</color>
+    <color name="Gray_700">#FF4B4C55</color>
+    <color name="Gray_800">#FF40414A</color>
+    <color name="Gray_900">#FF2E3036</color>
+    <color name="Black">#FF000000</color>
 </resources>
