@@ -2,5 +2,29 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="main_color">#FF223A71</color>
+
+    <!-- Primary -->
+    <color name="Primary">#FF0A0B1A</color>
+    <color name="OnPrimary">#FFFFFFFF</color>
+    <color name="DeActiveOnPrimary">#5CFFFFFF</color>
+
+
+    <!-- Secondary -->
+    <color name="Secondary_B_5">#FF2353CF</color>
+    <color name="Secondary_B">#FF3959FF</color>
+    <color name="Secondary_B_3">#FF6499FF</color>
+    <color name="Secondary_B_2">#FFBCD3FF</color>
+    <color name="Secondary_B_1">#FFE9F2FF</color>
+
+    <color name="Secondary_O_5">#FFFF8A00</color>
+    <color name="Secondary_O">#FFFFAB2D</color>
+    <color name="Secondary_O_3">#FFFFC978</color>
+    <color name="Secondary_O_2">#FFFFE2B6</color>
+    <color name="Secondary_O_1">#FFFFF1DD</color>
+
+
+    <!-- Text & Icon -->
+    <color name="Active">#DE020411</color>
+    <color name="Intermediate">#99020411</color>
+    <color name="DeActive">#5C020411</color>
 </resources>
