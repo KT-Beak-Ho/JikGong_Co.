@@ -1,4 +1,4 @@
-package com.example.jikgong.ui.scout
+package com.example.jikgong.view.main.info
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.jikgong.R
 
-class ScoutFragment : Fragment() {
+class InfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +20,7 @@ class ScoutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scout, container, false)
+        return inflater.inflate(R.layout.fragment_info, container, false)
     }
 
 }
