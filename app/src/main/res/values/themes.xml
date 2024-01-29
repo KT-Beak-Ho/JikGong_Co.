@@ -7,5 +7,8 @@
 
     <style name="Theme.JikGong" parent="Base.Theme.JikGong" >
         <item name="colorPrimary">@color/Primary</item>
+        <item name="colorOnPrimary">@color/OnPrimary</item>
+
+
     </style>
 </resources>

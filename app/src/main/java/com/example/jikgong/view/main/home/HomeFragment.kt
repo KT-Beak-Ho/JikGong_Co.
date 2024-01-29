@@ -1,5 +1,6 @@
 package com.example.jikgong.view.main.home
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,19 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        // 알림 테스트 용, intent 또는 fragment로 교체 예정
+        binding.buttonNotification.setOnClickListener {
+            var builder = AlertDialog.Builder(this.activity)
+            builder.setTitle("알림")
+            builder.setMessage("알림입니다요오")
+
+            builder.setNegativeButton("취소") {dialog, which ->
+                dialog.dismiss()
+            }
+            val dialog = builder.create()
+            dialog.show()
+        }
 
         binding.welcomeText.text = "직공기업, 환영합니다"
 
