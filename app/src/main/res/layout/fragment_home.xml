@@ -43,7 +43,59 @@
                 />
 
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_marginStart="16dp"
+                android:gravity="start"
+                android:paddingTop="15dp"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="진행중 0"
+                    android:fontFamily="@font/pretendard_semi_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/White"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="예정 0"
+                    android:fontFamily="@font/pretendard_semi_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/White"
+                    />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="완료 0"
+                    android:fontFamily="@font/pretendard_semi_bold"
+                    android:textSize="16sp"
+                    android:textColor="@color/White"
+                    />
+            </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="직공 TIP"
+                android:textColor="@color/White"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="end"/>
+        </LinearLayout>
     </LinearLayout>
+    
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
