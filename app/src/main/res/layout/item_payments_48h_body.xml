@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp">
+
+    <!--    header ( title, job name )-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payments_48h_body_item_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/payments_48h_body_item_header_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/payments_48h_body_item_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1월 25일 출역"
+                android:textColor="@color/High"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--상태값에 따라 ic_select_up / ic_select_down 변경-->
+            <ImageButton
+                android:id="@+id/payments_48h_body_item_header_title_detail_button"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_select_up"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/payments_48h_body_item_header_job_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/payments_48h_body_item_header_title_bar">
+
+            <TextView
+                android:id="@+id/payments_48h_body_item_header_job_name_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사하구 낙동5블럭 낙동강 온도 측정 센터 신축..."
+                android:textColor="@color/Medium"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    payment detail info-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payments_48h_body_item_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/payments_48h_body_item_header">
+        <!--        android:visibility="gone"-->
+        <!--        이부분 RecyclerView 로 수정해야함-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/payments_48h_body_item_detail_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="신호수 2명"
+                android:textColor="@color/Medium"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/payments_48h_body_item_detail_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="220,000 원"
+                android:textColor="@color/Medium"
+                android:textSize="14sp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    body ( total payments, 입금 버튼 )-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payments_48h_body_item_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/payments_48h_body_item_detail">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/payments_48h_body_item_body_total_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총 결제금액"
+                android:textColor="@color/High"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="220,000원"
+                android:textColor="@color/Secondary_B"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/payments_48h_body_item_body_payment_limit_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="right"
+            android:text="1월 25일 오전 06:30 까지 입금"
+            android:textColor="@color/Secondary_O"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/payments_48h_body_item_body_total_payment" />
+
+        <Button
+            android:id="@+id/payments_48h_body_item_body_total_payment_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="입금"
+            app:layout_constraintTop_toBottomOf="@id/payments_48h_body_item_body_payment_limit_date" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
