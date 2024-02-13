@@ -1,237 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:background="#F3F4F8">
-    <!--    헤더-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/payments_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:layout_constraintTop_toTopOf="parent">
+    android:fitsSystemWindows="true"
+    tools:context=".view.main.history.HistoryFragment">
 
-        <TextView
-            android:id="@+id/payments_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="지급관리"
-            android:fontFamily="@font/pretendard_bold"
-            android:lineHeight="26sp"
-            android:textColor="@color/Primary"
-            android:textSize="26sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <ImageView
-            android:id="@+id/payments_alert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="4dp"
-            android:src="@drawable/ic_alert"
-            />
+<!--        <com.google.android.material.appbar.MaterialToolbar-->
+<!--            android:id="@+id/historyToolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize" />-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
-    <!--    지급 총액-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/payments_total"
-        android:layout_width="match_parent"
-        android:layout_height="146dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/payments_header">
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        android:elevation="4dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        />-->
+<!--    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payments_total_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="27dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="27dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/payments_total_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="지급총액"
-                android:fontFamily="@font/pretendard_semi_bold"
-                android:textColor="@color/Medium"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/payments_total_charge"
-                android:layout_width="31dp"
-                android:layout_height="wrap_content"
-                android:text="0원"
-                android:fontFamily="@font/pretendard_semi_bold"
-                android:textColor="@color/Secondary_B"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payments_total_body"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintEnd_toEndOf="@id/payments_total_header"
-            app:layout_constraintStart_toStartOf="@id/payments_total_header"
-            app:layout_constraintTop_toBottomOf="@id/payments_total_header">
-
-            <Button
-                android:id="@+id/payments_total_add_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="직접 추가하기"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--    48시간 이내 입금-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/payments_48h"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/payments_total">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payments_48h_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/payments_48h_header_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="48시간 이내에 입금"
-                android:fontFamily="@font/pretendard_bold"
-                android:lineHeight="26sp"
-                android:textColor="@color/Primary"
-                android:textSize="26sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/payments_48h_header_title_question_button"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/payments_48h_header_title"
-                android:src="@drawable/ic_version"
-                />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payments_48h_body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@color/White"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payments_48h_header">
-
-            <TextView
-                android:id="@+id/payments_48h_body_empty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="48시간 내에 입금할 일자리가 없습니다."
-                android:fontFamily="@font/pretendard_semi_bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--    지급 내역서-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/payments_history"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/payments_48h"
-        android:layout_marginTop="32dp">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payments_log_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/payments_history_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_bold"
-                android:lineHeight="26sp"
-                android:text="지급내역서"
-                android:textColor="@color/Primary"
-                android:textSize="26sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/payments_history_body"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@color/White"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/payments_log_header">
-
-            <TextView
-                android:id="@+id/payments_history_body_empty"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="받은 지급내역서가 없습니다."
-                android:fontFamily="@font/pretendard_semi_bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/payments_history_body"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="32dp"
-            android:text="더보기"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <fragment
+        android:id="@+id/nav_host_fragment_history"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/history_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
