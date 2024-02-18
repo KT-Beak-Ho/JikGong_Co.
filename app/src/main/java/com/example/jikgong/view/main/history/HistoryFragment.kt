@@ -11,6 +11,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.jikgong.R
@@ -28,6 +31,7 @@ class HistoryFragment : Fragment() {
 //    private lateinit var paymentHistoryAdapter: PaymentHistoryAdapter
 
     private var _binding:FragmentHistoryBinding?=null
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -36,12 +40,15 @@ class HistoryFragment : Fragment() {
     ): View? {
 
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+
+
 //        val toolbar: Toolbar = binding.toolbar
 //        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
 //        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
 //            title = "Fragment Title" // Set the title
 //            setDisplayHomeAsUpEnabled(true) // Show the back button
 //        }
+
         return binding.root
 
     }
