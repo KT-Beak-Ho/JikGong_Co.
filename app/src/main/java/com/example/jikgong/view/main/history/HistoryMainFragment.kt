@@ -1,7 +1,6 @@
 package com.example.jikgong.view.main.history
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +14,7 @@ import com.example.jikgong.view.main.history.adapter.PaymentAdapter
 import com.example.jikgong.view.main.history.adapter.PaymentHistoryAdapter
 import com.example.jikgong.view.main.history.dataModel.PaymentHistoryItem
 import com.example.jikgong.view.main.history.dataModel.PaymentItem
+import com.example.jikgong.view.main.history.dataSet.PaymentHistoryDataGen
 
 
 class HistoryMainFragment : Fragment() {
@@ -58,7 +58,7 @@ class HistoryMainFragment : Fragment() {
         }
         //  지급내역서 - 더보기 버튼 클릭
         binding.paymentsHistoryShowMoreButton.setOnClickListener {
-            showToast("지급내역서 - 더보기 버튼 클릭")
+            findNavController().navigate(R.id.action_historyMainFragment_to_paymentsHistoryShowMoreFragment)
         }
 
         //  48H 시간 이내 입금 관련
@@ -98,33 +98,10 @@ class HistoryMainFragment : Fragment() {
         val rePaymentHistory = binding.recyclerViewPaymentsHistory
         rePaymentHistory.layoutManager = LinearLayoutManager(requireContext())
 
-        var paymentHistoryItems = ArrayList<PaymentHistoryItem>()
-        paymentHistoryItems.add(
-            PaymentHistoryItem(
-                "사하구 낙동5블럭 낙동강 온도 측정 센터 신축 공사",
-                "1월 25일 보통인부 지급내역서",
-                "보통인부 10명",
-                "2024.01.23"
-            )
-        )
-//        paymentHistoryItems.add(
-//            PaymentHistoryItem(
-//                "사하구 낙동5블럭 낙동강 온도 측정 센터 신축 공사",
-//                "1월 25일 보통인부 지급내역서",
-//                "보통인부 10명",
-//                "2024.01.23"
-//            )
-//        )
-
+        var paymentHistoryItems =  PaymentHistoryDataGen.generateSamplePaymentHistoryItems()
         paymentHistoryAdapter = PaymentHistoryAdapter(paymentHistoryItems)
         rePaymentHistory.adapter = paymentHistoryAdapter
 
-//        paymentHistoryAdapter.setItemClickListener(object : PaymentAdapter.PaymentItemClickListener {
-//            override fun onDepositButtonClick(position: Int) {
-//                // Handle the button click for the specific item
-//                showToast("입금 버튼이 클릭되었습니다. Position: $position")
-//            }
-//        })
         //  RecyclerView 화면 결정
         updateUI2(paymentHistoryItems)
 
