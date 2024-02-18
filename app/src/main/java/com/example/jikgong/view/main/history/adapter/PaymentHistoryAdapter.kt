@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.jikgong.R
 import com.example.jikgong.view.main.history.dataModel.PaymentHistoryItem
 
-class PaymentHistoryAdapter(val paymentHistoryList:ArrayList<PaymentHistoryItem>) :
+class PaymentHistoryAdapter(val paymentHistoryList: List<PaymentHistoryItem>) :
     RecyclerView.Adapter<PaymentHistoryAdapter.ViewHolder>(){
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val headerTitleTextView: TextView = itemView.findViewById(R.id.payments_history_body_item_header_title)

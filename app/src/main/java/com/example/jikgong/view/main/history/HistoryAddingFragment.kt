@@ -1,19 +1,21 @@
 package com.example.jikgong.view.main.history
 
+import android.R
+import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.jikgong.databinding.FragmentHistoryAddingBinding
-import com.example.jikgong.databinding.FragmentHistoryBinding
+
 
 class HistoryAddingFragment : Fragment() {
 
@@ -29,27 +31,52 @@ class HistoryAddingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHistoryAddingBinding.inflate(inflater, container, false)
-        binding.backButton.setOnClickListener{
+        binding.backButton.setOnClickListener {
             findNavController().navigateUp()
         }
 
-//        val editTextInput: EditText = binding.paymentsAddPageBodyFieldInput
-//        val buttonSubmit: Button = binding.paymentsAddPageSubmitButton
-//
-//        buttonSubmit.setOnClickListener {
-//            // EditText에서 입력된 문자열 가져오기
-//            val userInput = editTextInput.text.toString()
-//
-//            // 입력된 문자열을 Toast 메시지로 표시
-//            showToast(userInput)
-//        }
+        binding.paymentsAddPageBodyJobDateTitleCalendarButton.setOnClickListener {
+            val fragment = HistoryAddingBottomSheetDialogFragment()
+            fragment.show(requireActivity().supportFragmentManager, "HistoryAddingBottomSheet")
+        }
 
         return binding.root
     }
 
+    private fun paymentsAddPageBodyFieldTitle(){
+        val textView: TextView = binding.paymentsAddPageBodyFieldTitle
+        val text = binding.paymentsAddPageBodyFieldTitle.text
+
+        val spannableString = SpannableString(text)
+
+        spannableString.setSpan(
+            ForegroundColorSpan(Color.parseColor("#02030C")),
+            0,
+            3,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        spannableString.setSpan(
+            ForegroundColorSpan(Color.parseColor("#3971FF")),
+            4,
+            5,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        val alphaValue = (255 * 0.36).toInt() // Calculate alpha value for 36% transparency
+        val transparentColor = Color.argb(alphaValue, 2, 3, 12)
+        spannableString.setSpan(
+            ForegroundColorSpan(transparentColor),
+            6,
+            text.length,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+
+        textView.text = spannableString
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        paymentsAddPageBodyFieldTitle()
 //        // Print the name of the current fragment
 //        val currentDestinationId = findNavController().currentDestination?.id
 //        val fragmentName = currentDestinationId?.let { resources.getResourceEntryName(it) }
