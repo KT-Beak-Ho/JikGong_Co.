@@ -2,12 +2,12 @@ package com.example.jikgong.view.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.example.jikgong.R
 import com.example.jikgong.view.main.scout.ScoutFragment
 
 
 class ScoutActivity : AppCompatActivity() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

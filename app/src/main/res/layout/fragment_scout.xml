@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/White"
-        android:title="rt"
+        app:title="인력 스카웃"
         app:titleTextColor="@color/Black" />
     <!-- TabLayout 설정 -->
     <com.google.android.material.tabs.TabLayout
@@ -25,6 +25,7 @@
     <!-- ViewPager 설정 -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
+        android:background="@color/Background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tabLayout" />
