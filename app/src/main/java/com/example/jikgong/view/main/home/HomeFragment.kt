@@ -8,8 +8,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager.widget.ViewPager
 import com.example.jikgong.R
 import com.example.jikgong.databinding.FragmentHomeBinding
+import com.example.jikgong.view.main.scout.HomeCompleteFragment
+import com.example.jikgong.view.main.scout.HomeOnGoingFragment
+import com.example.jikgong.view.main.scout.HomeScheduleFragment
+import com.example.jikgong.view.main.scout.ScoutListFragment
+import com.example.jikgong.view.main.scout.ScoutSuggestionListFragment
+import com.google.android.material.tabs.TabLayout
 
 class HomeFragment : Fragment() {
 
@@ -44,9 +51,42 @@ class HomeFragment : Fragment() {
             dialog.show()
         }
 
-        binding.welcomeText.text = "직공기업, 환영합니다"
+        val tabLayout: TabLayout = root.findViewById(R.id.homeTapLayout)
+        val viewPager: ViewPager = root.findViewById(R.id.homeViewPager)
+        setupViewPager(viewPager)
+        tabLayout.setupWithViewPager(viewPager)
 
         return root
     }
 
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.addFragment(HomeOnGoingFragment(), "진행중")
+        adapter.addFragment(HomeScheduleFragment(), "예정")
+        adapter.addFragment(HomeCompleteFragment(), "완료")
+        viewPager.adapter = adapter
+    }
+
+    private class ViewPagerAdapter(manager: androidx.fragment.app.FragmentManager) :
+        androidx.fragment.app.FragmentPagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+        private val fragments: MutableList<Fragment> = ArrayList()
+        private val titles: MutableList<String> = ArrayList()
+
+        override fun getItem(position: Int): Fragment {
+            return fragments[position]
+        }
+
+        override fun getCount(): Int {
+            return fragments.size
+        }
+
+        override fun getPageTitle(position: Int): CharSequence? {
+            return titles[position]
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            fragments.add(fragment)
+            titles.add(title)
+        }
+    }
 }
