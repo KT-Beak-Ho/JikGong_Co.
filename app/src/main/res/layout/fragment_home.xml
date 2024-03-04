@@ -50,44 +50,6 @@
             android:gravity="center_horizontal"
             >
 
-            <!-- <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:layout_marginStart="16dp"
-                android:gravity="start"
-                android:paddingTop="15dp"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="진행중 0"
-                    android:fontFamily="@font/pretendard_semi_bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/White"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="예정 0"
-                    android:fontFamily="@font/pretendard_semi_bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/White"
-                    />
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="완료 0"
-                    android:fontFamily="@font/pretendard_semi_bold"
-                    android:textSize="16sp"
-                    android:textColor="@color/White"
-                    />
-            </LinearLayout>
-            -->
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/homeTapLayout"
                 android:layout_width="257dp"
@@ -111,7 +73,9 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/homeViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="@color/Background"
+        />
 
 
 </LinearLayout >
