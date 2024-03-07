@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="사하구 낙동5블럭 낙동강 온도 초정 센터 신축공사"
+                android:text="사하구 낙동5블럭 낙동강 온도 측정 센터 신축공사"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
 
             <LinearLayout
